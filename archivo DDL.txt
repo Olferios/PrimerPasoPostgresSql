@@ -1,0 +1,34 @@
+create database taller2;
+\c taller2;
+
+create table country (
+	id serial primary key,
+	nombre varchar(50));
+
+
+
+
+
+create table departamento (
+	id int primary key,
+	nombre varchar(50),
+	idPais serial,
+
+
+
+
+create table municipio (
+	id int primary key,
+	nombre varchar(50),
+	idDepartamento serial,
+	constraint fk_deparamento foreign key (idDepartamento) references departamento(id));
+
+create table localidades (
+	idLocalidad serial  int primary key,
+	idDepartamento serial,
+	nombreDepartamento varchar(50),
+	idMunicipio serial,
+	nombreMunicipio varchar(50)	
+
+);
+
